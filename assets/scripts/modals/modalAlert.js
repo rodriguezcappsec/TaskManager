@@ -1,6 +1,6 @@
 let modalAlert = (message, title) => {
   // tabindex="-1"
-  // $("#modal-alert").remove();
+  $("#modal-alert").remove();
   $("body").append(`
   <div class="modal" id="modal-alert"  role="dialog">
   <div class="modal-dialog" role="document">

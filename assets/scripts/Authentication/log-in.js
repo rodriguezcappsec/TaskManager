@@ -1,5 +1,8 @@
 import apiUrl from "../config.js";
 import modalAlert from "../modals/modalAlert.js";
+import authenticatedUser from "../authenticated.js";
+import tasksGrid from "../task/task-html-grid.js";
+
 let logIn = () => {
   $("#login-form").on("submit", event => {
     event.preventDefault();
@@ -16,12 +19,17 @@ let logIn = () => {
     })
       .then(data => {
         modalAlert(`Welcome ${data.user.full_name}`, "Log in Successful");
-        $(".log-in").hide();
-        $(".wrapper").show();
-        console.log(data);
+        $(".log-in").fadeOut();
+        $(".wrapper").fadeIn("slow");
+        authenticatedUser.user = data.user;
+        console.log(authenticatedUser.user);
+        tasksGrid();
       })
       .catch(() => {
-        console.log("error");
+        modalAlert(
+          `You have entered an invalid username or password`,
+          "Unsuccessful LogIn"
+        );
       });
   });
 };

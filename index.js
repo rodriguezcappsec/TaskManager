@@ -12,4 +12,5 @@ import './assets/styles/index.scss';
 import './assets/assets/css/material-dashboard.css';
 import './assets/assets/img/apple-icon.png';
 import './assets/assets/img/favicon.png';
+import './assets/assets/js/plugins/perfect-scrollbar.jquery.min.js';
 // import './assets/assets/';

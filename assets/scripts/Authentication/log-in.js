@@ -2,6 +2,7 @@ import apiUrl from "../config.js";
 import modalAlert from "../modals/modalAlert.js";
 import authenticatedUser from "../authenticated.js";
 import getTasks from "../task/tasks-request.js";
+import getUsers from "../user/users-request";
 
 let logIn = () => {
   $("#login-form").on("submit", event => {
@@ -24,6 +25,7 @@ let logIn = () => {
         authenticatedUser.user = data.user;
         console.log(authenticatedUser.user);
         getTasks();
+        getUsers();
       })
       .catch(() => {
         modalAlert(

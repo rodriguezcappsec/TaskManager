@@ -3,7 +3,7 @@ import taskContainer from "./all-tasks-container.js";
 import tasksGrid from "./task-html-grid.js";
 import authenticatedUser from "../authenticated.js";
 
-let tasks = () => {
+let users = () => {
   $.ajax({
     url: apiUrl.apiUrl + "/tasks",
     method: "GET",
@@ -20,4 +20,4 @@ let tasks = () => {
       console.log("error");
     });
 };
-export default tasks;
+export default users;

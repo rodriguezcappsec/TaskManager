@@ -1,7 +1,7 @@
 import apiUrl from "../config.js";
 import modalAlert from "../modals/modalAlert.js";
 import authenticatedUser from "../authenticated.js";
-import tasksGrid from "../task/task-html-grid.js";
+import getTasks from "../task/tasks-request.js"
 
 let logIn = () => {
   $("#login-form").on("submit", event => {
@@ -23,7 +23,7 @@ let logIn = () => {
         $(".wrapper").fadeIn("slow");
         authenticatedUser.user = data.user;
         console.log(authenticatedUser.user);
-        tasksGrid();
+       console.log(getTasks);
       })
       .catch(() => {
         modalAlert(

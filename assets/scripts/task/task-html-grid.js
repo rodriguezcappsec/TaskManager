@@ -1,30 +1,33 @@
 let tasksgrid = tasks => {
   let grid = "";
   for (const key in tasks) {
-    grid += /*html*/ `
-    <div class="row" id="dashboard-tasks">
-              <div class="col-md-4">
+    let id = tasks[key].id;
+    grid += 
+    "<div class='col-md-4'"+"id="+`"${id}"`+">"+`
                 <div class="card card-chart">
-                  <div class="card-header card-header-success">
+                  <div class="card-header  card-header-success">
                     <div class="ct-chart" id="dailySalesChart"></div>
                   </div>
                   <div class="card-body">
-                    <h4 class="card-title">${key}</h4>
+                    <h4 class="card-title">${tasks[key].title}</h4>
                     <p class="card-category">
                       <span class="text-success">
-                        <i class="fa fa-long-arrow-up"></i> 55% </span> increase in today sales.</p>
+                        <i class="material-icons">description</i></span>${
+                          tasks[key].description
+                        }</p>
                   </div>
                   <div class="card-footer">
                     <div class="stats">
-                      <i class="material-icons">access_time</i> updated 4 minutes ago
+                      <i class="material-icons">access_time</i>${
+                        tasks[key].status
+                      }
                     </div>
                   </div>
                 </div>
               </div>
-        </div>
     `;
   }
-  $("#master-container").append(grid);
+  $("#dashboard-tasks").append(grid);
 };
 
 export default tasksgrid;

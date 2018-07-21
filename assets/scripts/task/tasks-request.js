@@ -14,7 +14,7 @@ let tasks = () => {
     .then(data => {
       taskContainer.tasks = data.tasks;
       tasksGrid(taskContainer.tasks);
-      console.log(data);
+      console.log(taskContainer);
     })
     .catch(() => {
       console.log("error");

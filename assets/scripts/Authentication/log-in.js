@@ -24,7 +24,6 @@ let logIn = () => {
         authenticatedUser.user = data.user;
         console.log(authenticatedUser.user);
         getTasks();
-        console.log("worls?");
       })
       .catch(() => {
         modalAlert(

@@ -15,7 +15,7 @@ let logIn = () => {
       }
     })
       .then(data => {
-        modalAlert(`Welcome ${data.user.full_name}`, "Success");
+        modalAlert(`Welcome ${data.user.full_name}`, "Log in Successful");
         $(".log-in").hide();
         $(".wrapper").show();
         console.log(data);

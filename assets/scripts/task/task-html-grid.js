@@ -1,7 +1,7 @@
 let tasksgrid = tasks => {
   let grid = "";
   for (const key in tasks) {
-    grid+=/*html*/`
+    grid += /*html*/ `
     <div class="row" id="dashboard-tasks">
               <div class="col-md-4">
                 <div class="card card-chart">
@@ -22,7 +22,7 @@ let tasksgrid = tasks => {
                 </div>
               </div>
         </div>
-    `
+    `;
   }
   $("#master-container").append(grid);
 };

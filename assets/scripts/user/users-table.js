@@ -24,6 +24,7 @@ let tableUsers = users => {
                 <th>Role</th>
                 <th>Address</th>
                 <th>Dob</th>
+                <th>Actions</th>
               </thead>
               <tbody>
               `;
@@ -42,6 +43,10 @@ let tableUsers = users => {
                   <td>${users[key].role}</td>
                   <td>${users[key].address}</td>
                   <td>${users[key].dob}</td>
+                  <td>
+                  <button type="button" id="modalEdit" class="btn btn-warning">Warning</button>
+                  <button type="button" id="delete-user" class="btn btn-danger">Danger</button>
+                  </td>
                 </tr>
     `;
     }

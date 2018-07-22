@@ -16,9 +16,10 @@ let users = () => {
       const showEmployees = () => {
         $("#all-employees").on("click", () => {
           $("#dashboard-container").html("");
-          tableUsers(usersContainer.users);
+          tableUsers(data.users);
         });
       };
+      // console.log(usersContainer)
       showEmployees();
     })
     .catch(() => {

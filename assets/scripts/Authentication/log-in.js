@@ -2,20 +2,22 @@ import apiUrl from "../config.js";
 import modalAlert from "../modals/modalAlert.js";
 import authenticatedUser from "../authenticated.js";
 import getTasks from "../task/tasks-request.js";
-import changePassword from "./change-password.js";
 import changePassModal from "./auth-modals/change-ps-modal.js";
 import logOut from "./log-out.js";
 import getUsers from "../user/users-request.js";
 import userProfile from "../userProfile/userprofile.js";
-import updateUser from "../userProfile/update-user.js";
 
-const authExcalation = () => {
+const isUserAdmin = () => {
   if (authenticatedUser.user.isadmin == null) {
     $("#all-tasks").hide();
     $("#all-employees").hide();
+    $("#add-employees").hide();
+    $("#add-tasks").hide();
   } else {
     $("#all-tasks").show();
     $("#all-employees").show();
+    $("#add-employees").show();
+    $("#add-tasks").show();
   }
 };
 
@@ -24,10 +26,9 @@ const logInEvents = data => {
   $(".wrapper").fadeIn("slow");
   modalAlert(`Welcome ${data.user.full_name}`, "Log in Successful");
   authenticatedUser.user = data.user;
-  getTasks();
   getUsers();
-  authExcalation();
-  // changePassword();
+  getTasks();
+  isUserAdmin();
   changePassModal();
   userProfile();
   logOut();

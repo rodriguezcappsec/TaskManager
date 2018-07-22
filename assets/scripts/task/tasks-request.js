@@ -2,7 +2,7 @@ import apiUrl from "../config.js";
 import taskContainer from "./all-tasks-container.js";
 import tasksGrid from "./task-html-grid.js";
 import authenticatedUser from "../authenticated.js";
-
+import usersContainer from "../user/all-users-container.js";
 let tasks = () => {
   $.ajax({
     url: apiUrl.apiUrl + "/tasks",
@@ -15,6 +15,7 @@ let tasks = () => {
       taskContainer.tasks = data.tasks;
       tasksGrid(taskContainer.tasks);
       console.log(taskContainer);
+      console.log(usersContainer)
     })
     .catch(() => {
       console.log("error");

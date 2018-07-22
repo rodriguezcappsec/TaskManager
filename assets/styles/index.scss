@@ -21,8 +21,12 @@
 .card:hover {
   cursor: pointer;
 }
-#modal-alert {
+#modal-alert,
+#modal-change-password {
   transform: translate(0, -50%);
   top: 50%;
   margin: 0 auto;
+}
+#modal-change-password {
+  height: 500px;
 }

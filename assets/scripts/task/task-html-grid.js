@@ -2,8 +2,12 @@ let tasksgrid = tasks => {
   let grid = "";
   for (const key in tasks) {
     let id = tasks[key].id;
-    grid += 
-    "<div class='col-md-4'"+"id="+`"${id}"`+">"+`
+    grid +=
+      "<div class='col-md-4'" +
+      "id=" +
+      `"${id}"` +
+      ">" +
+      `
                 <div class="card card-chart">
                   <div class="card-header  card-header-success">
                     <div class="ct-chart" id="dailySalesChart"></div>
@@ -27,6 +31,7 @@ let tasksgrid = tasks => {
               </div>
     `;
   }
+
   $("#dashboard-container").append(grid);
 };
 

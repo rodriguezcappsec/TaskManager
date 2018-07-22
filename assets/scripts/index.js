@@ -1,12 +1,7 @@
 "use strict";
 import loginApi from "./Authentication/log-in.js";
 import getTasks from "./task/tasks-request.js";
-import authenticatedUser from "./authenticated.js";
-// use require with a reference to bundle the file and use it in this file
-// const example = require('./example')
-
-// use require without a reference to ensure a file is bundled
-// require('./example')
+import getUsers from "./user/users-request.js";
 
 const showDashboard = () => {
   $("#tasks-dashboard").on("click", () => {
@@ -14,10 +9,16 @@ const showDashboard = () => {
     getTasks();
   });
 };
-
+// const showEmployees = () => {
+//   $("#all-employees").on("click", () => {
+//     $("#dashboard-container").html("");
+//     getUsers();
+//   });
+// };
 
 $(() => {
   $(".wrapper").hide();
   loginApi();
   showDashboard();
+  // showEmployees();
 });

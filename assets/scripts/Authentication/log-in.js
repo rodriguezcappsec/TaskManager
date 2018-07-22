@@ -2,7 +2,13 @@ import apiUrl from "../config.js";
 import modalAlert from "../modals/modalAlert.js";
 import authenticatedUser from "../authenticated.js";
 import getTasks from "../task/tasks-request.js";
-import getUsers from "../user/users-request";
+import changePassword from "./change-password.js";
+import changePassModal from "./auth-modals/change-ps-modal.js";
+import logOut from "./log-out.js";
+import getUsers from "../user/users-request.js";
+import userProfile from "../userProfile/userprofile.js";
+import updateUser from "../userProfile/update-user.js";
+
 const authExcalation = () => {
   if (authenticatedUser.user.isadmin == null) {
     $("#all-tasks").hide();
@@ -11,6 +17,20 @@ const authExcalation = () => {
     $("#all-tasks").show();
     $("#all-employees").show();
   }
+};
+
+const logInEvents = data => {
+  $(".log-in").fadeOut();
+  $(".wrapper").fadeIn("slow");
+  modalAlert(`Welcome ${data.user.full_name}`, "Log in Successful");
+  authenticatedUser.user = data.user;
+  getTasks();
+  getUsers();
+  authExcalation();
+  // changePassword();
+  changePassModal();
+  userProfile();
+  logOut();
 };
 
 let logIn = () => {
@@ -28,14 +48,8 @@ let logIn = () => {
       }
     })
       .then(data => {
-        modalAlert(`Welcome ${data.user.full_name}`, "Log in Successful");
-        $(".log-in").fadeOut();
-        $(".wrapper").fadeIn("slow");
-        authenticatedUser.user = data.user;
-        console.log(authenticatedUser.user);
-        getTasks();
-        getUsers();
-        authExcalation();
+        logInEvents(data);
+        console.log(data.user);
       })
       .catch(() => {
         modalAlert(

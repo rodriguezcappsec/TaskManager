@@ -3,6 +3,15 @@ import modalAlert from "../modals/modalAlert.js";
 import authenticatedUser from "../authenticated.js";
 import getTasks from "../task/tasks-request.js";
 import getUsers from "../user/users-request";
+const authExcalation = () => {
+  if (authenticatedUser.user.isadmin == null) {
+    $("#all-tasks").hide();
+    $("#all-employees").hide();
+  } else {
+    $("#all-tasks").show();
+    $("#all-employees").show();
+  }
+};
 
 let logIn = () => {
   $("#login-form").on("submit", event => {
@@ -26,6 +35,7 @@ let logIn = () => {
         console.log(authenticatedUser.user);
         getTasks();
         getUsers();
+        authExcalation();
       })
       .catch(() => {
         modalAlert(

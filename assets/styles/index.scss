@@ -18,7 +18,9 @@
   opacity: 0.5;
   filter: alpha(opacity=50);
 }
-
+.card:hover {
+  cursor: pointer;
+}
 #modal-alert {
   transform: translate(0, -50%);
   top: 50%;

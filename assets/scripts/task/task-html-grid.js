@@ -27,7 +27,7 @@ let tasksgrid = tasks => {
               </div>
     `;
   }
-  $("#dashboard-tasks").append(grid);
+  $("#dashboard-container").append(grid);
 };
 
 export default tasksgrid;

@@ -2,7 +2,7 @@ import apiUrl from "../config.js";
 import usersContainer from "./all-users-container";
 import authenticatedUser from "../authenticated.js";
 
-let tasks = () => {
+let users = () => {
   $.ajax({
     url: apiUrl.apiUrl + "/users",
     method: "GET",
@@ -18,4 +18,4 @@ let tasks = () => {
       console.log("error");
     });
 };
-export default tasks;
+export default users;

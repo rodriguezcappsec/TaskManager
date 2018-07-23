@@ -33,7 +33,7 @@ let addEmployee = () => {
         console.log(data);
       })
       .catch(() => {
-        console.log(error);
+        modelAlert("Error adding new employee","Invalid!")
       });
   });
 };

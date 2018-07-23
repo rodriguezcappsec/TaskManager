@@ -7,6 +7,7 @@ import logOut from "./log-out.js";
 import getUsers from "../user/users-request.js";
 import userProfile from "../userProfile/userprofile.js";
 import addEmployee from "../add-employee/add-employee-form.js";
+import addTask from "../add-task/add-task-form.js";
 const isUserAdmin = () => {
   if (authenticatedUser.user.isadmin == null) {
     $("#all-tasks").hide();
@@ -32,6 +33,7 @@ const logInEvents = data => {
   changePassModal();
   userProfile();
   addEmployee();
+  addTask()
   logOut();
 };
 

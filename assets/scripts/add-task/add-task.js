@@ -28,7 +28,6 @@ let addTask = () => {
         loadTasks();
         modelAlert("Task added succesfully", "Success");
         $("#add-task-modal").modal("hide");
-        console.log(data);
       })
       .catch(() => {
         console.log(error);

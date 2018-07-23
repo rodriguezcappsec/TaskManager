@@ -2,19 +2,18 @@ import users from "../user/all-users-container.js";
 let tasksgrid = tasks => {
   let grid = "";
   let name = "";
+  let count = 0;
   for (const key in tasks) {
-    let id = tasks[key].id;
-
     name = tasks[key].user_id
       ? users.users.map(v => {
           return v.id == tasks[key].user_id ? v.full_name : "";
         })
       : "";
-
+    count++;
     grid +=
       "<div class='col-md-4'" +
       "id=" +
-      `"${id}"` +
+      `"${tasks[key].id}"` +
       ">" +
       `
                 <div class="card card-chart">
@@ -44,8 +43,10 @@ let tasksgrid = tasks => {
               </div>
     `;
   }
-  $("#dashboard-container").append(grid);
   name = "";
+  $("#dashboard-container").append(grid);
+  $("#notification").text(count);
+  $('#dropdown_notification').text(`There are ${count} tasks assigned!`)
 };
 
 export default tasksgrid;

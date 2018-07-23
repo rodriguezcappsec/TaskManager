@@ -1,14 +1,16 @@
 import users from "../user/all-users-container.js";
 let tasksgrid = tasks => {
   let grid = "";
-  console.log(name);
+  let name = "";
   for (const key in tasks) {
     let id = tasks[key].id;
-    let name = tasks[key].user_id
+
+    name = tasks[key].user_id
       ? users.users.map(v => {
           return v.id == tasks[key].user_id ? v.full_name : "";
         })
       : "";
+
     grid +=
       "<div class='col-md-4'" +
       "id=" +
@@ -18,7 +20,9 @@ let tasksgrid = tasks => {
                 <div class="card card-chart">
                   <div class="card-header  card-header-success">
                     <div class="ct-chart" id="dailySalesChart" style="font-weight: bold;"> Assigned to ${
-                      tasks[key].user_id ? JSON.stringify(name.join("")) : "No employee"
+                      tasks[key].user_id
+                        ? JSON.stringify(name.join(""))
+                        : "No employee"
                     }</div>
                   </div>
                   <div class="card-body">
@@ -41,6 +45,7 @@ let tasksgrid = tasks => {
     `;
   }
   $("#dashboard-container").append(grid);
+  name = "";
 };
 
 export default tasksgrid;

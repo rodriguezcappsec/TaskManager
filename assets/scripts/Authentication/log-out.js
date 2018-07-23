@@ -1,5 +1,7 @@
 import apiUrl from "../config.js";
 import authenticatedUser from "../authenticated.js";
+import users from "../user/all-users-container.js";
+import tasks from "../task/all-tasks-container.js";
 let logOut = () => {
   $("#log-out").on("click", () => {
     $.ajax({
@@ -10,6 +12,8 @@ let logOut = () => {
       }
     })
       .then(() => {
+        // delete users;
+        // delete tasks;
         location.reload();
       })
       .catch(() => {

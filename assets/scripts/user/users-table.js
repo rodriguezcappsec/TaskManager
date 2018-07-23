@@ -44,8 +44,8 @@ let tableUsers = users => {
                   <td>${users[key].address}</td>
                   <td>${users[key].dob}</td>
                   <td>
-                  <button type="button" id="modalEdit" class="btn btn-warning">Warning</button>
-                  <button type="button" id="delete-user" class="btn btn-danger">Danger</button>
+                  <button type="button" id="modalEdit" class="btn btn-warning">Edit</button>
+                  <button type="button" id="delete-user" class="btn btn-danger">Delete</button>
                   </td>
                 </tr>
     `;

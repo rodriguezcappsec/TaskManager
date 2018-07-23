@@ -30,6 +30,7 @@ let updateUser = () => {
     })
       .then(data => {
         modelAlert("User Updated Successfuly!", "Success");
+        // $("#profile-employee").trigger("click");
         console.log(data);
       })
       .catch(() => {});

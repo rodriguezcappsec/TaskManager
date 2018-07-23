@@ -6,7 +6,7 @@ import changePassModal from "./auth-modals/change-ps-modal.js";
 import logOut from "./log-out.js";
 import getUsers from "../user/users-request.js";
 import userProfile from "../userProfile/userprofile.js";
-
+import addEmployee from "../add-employee/add-employee-form.js";
 const isUserAdmin = () => {
   if (authenticatedUser.user.isadmin == null) {
     $("#all-tasks").hide();
@@ -26,11 +26,12 @@ const logInEvents = data => {
   $(".wrapper").fadeIn("slow");
   modalAlert(`Welcome ${data.user.full_name}`, "Log in Successful");
   authenticatedUser.user = data.user;
+  isUserAdmin();
   getUsers();
   getTasks();
-  isUserAdmin();
   changePassModal();
   userProfile();
+  addEmployee();
   logOut();
 };
 

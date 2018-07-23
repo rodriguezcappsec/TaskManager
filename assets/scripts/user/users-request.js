@@ -13,13 +13,12 @@ let users = () => {
   })
     .then(data => {
       usersContainer.users = data.users;
-      const showEmployees = () => {
+      let showEmployees = () => {
         $("#all-employees").on("click", () => {
           $("#dashboard-container").html("");
           tableUsers(data.users);
         });
       };
-      // console.log(usersContainer)
       showEmployees();
     })
     .catch(() => {

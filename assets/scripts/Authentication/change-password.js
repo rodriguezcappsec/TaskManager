@@ -9,7 +9,7 @@ let changePassword = () => {
 
     $.ajax({
       url: apiUrl.apiUrl + "/change-password",
-      method: "PATCH",
+      method: "PUT",
       headers: {
         Authorization: "Token token=" + authenticatedUser.user.token
       },

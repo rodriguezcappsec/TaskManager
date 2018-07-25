@@ -2,6 +2,7 @@ import apiUrl from "../config.js";
 import usersContainer from "./all-users-container";
 import authenticatedUser from "../authenticated.js";
 import tableUsers from "../user/users-table.js";
+import modelAlert from "../modals/modalAlert.js";
 
 let users = () => {
   $.ajax({
@@ -12,13 +13,13 @@ let users = () => {
     }
   })
     .then(data => {
-      usersContainer.users = data.users;
       let showEmployees = () => {
         $("#all-employees").on("click", () => {
           $("#dashboard-container").html("");
           tableUsers(data.users);
         });
       };
+      usersContainer.users = data.users;
       showEmployees();
     })
     .catch(() => {

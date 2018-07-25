@@ -30,7 +30,6 @@ let addEmployee = () => {
         modelAlert("Employee added succesfully", "Success");
         $("#add-employee-modal").modal("hide");
         $("#all-employees").trigger("click");
-        console.log(data);
       })
       .catch(() => {
         modelAlert("Error adding new employee","Invalid!")

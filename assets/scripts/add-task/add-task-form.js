@@ -4,7 +4,6 @@ let addTaskForm = () => {
   let users = "";
   $("#add-tasks").on("click", () => {
     for (let key in usersList) {
-      // users+=`<option value='${usersList[key].id}'>TEST</option>`
       usersList[key].forEach(
         el =>
           el.isadmin
@@ -12,8 +11,6 @@ let addTaskForm = () => {
             : (users += `<option value='${el.id}'>${el.full_name}</option>`)
       );
     }
-    console.log(users);
-
     $("#add-task-modal").remove();
     $("body").append(/*html*/ `
         <div class="modal" tabindex="-1" role="dialog" id="add-task-modal">
@@ -29,13 +26,16 @@ let addTaskForm = () => {
                   <form id="form-add-task">
                   <div class="form-row">
     <div class="form-group col-md-6">
-      <input type="text" class="form-control"  name="title" id="add-title" placeholder="Task title">
+    <label for="select-employee">Title</label>
+      <input type="text" class="form-control"  name="title" id="add-title">
     </div>
     <div class="form-group col-md-6">
-      <input type="text" class="form-control" name="start-date" id="add-date" placeholder="Start Date(yy-mm-dd)">
+    <label for="select-employee">Start Date</label>
+      <input type="date" class="form-control"  name="start-date" id="add-date" placeholder="Start Date(yy-mm-dd)">
     </div>
     <div class="form-group col-md-6">
-    <input type="text" class="form-control" name="due-date" id="add-due-date" placeholder="Due Date(yy-mm-dd)">
+    <label for="select-employee">Due Date</label>
+    <input type="date" class="form-control"  name="due-date" id="add-due-date" placeholder="Due Date(yy-mm-dd)">
   </div>
   </div>
   <div class="form-row">

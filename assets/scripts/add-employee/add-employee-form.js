@@ -34,7 +34,8 @@ let addEmployeeForm = () => {
   </div>
   <div class="form-row">
   <div class="form-group col-md-6">
-      <input type="text" class="form-control" name="add-dob" id="add-dob" placeholder="Date of Birth">
+  <label for="select-employee">Dob</label>
+      <input type="date" class="form-control" name="add-dob" id="add-dob" placeholder="Date of Birth">
     </div>
     <div class="form-group col-md-6">
       <input type="text" class="form-control" name="add-zipcode" id="add-zipcode" placeholder="Zip Code">
@@ -49,7 +50,7 @@ let addEmployeeForm = () => {
   <div class="form-group">
   <input type="text" class="form-control" name="add-profilepicture" id="add-profilepicture" placeholder="Profile Picture URL">
   </div>
-  <button type="submit" class="btn btn-primary">Sign in</button>
+  <button type="submit" class="btn btn-primary">Submit</button>
                 </form>
                 </div>
             </div>

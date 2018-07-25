@@ -26,7 +26,6 @@ let changePassword = () => {
           "Password Changed, you can know log in with your new password!",
           "Success"
         );
-        console.log(data);
       })
       .catch(() => {
         modalAlert("Error changing password", "Alert!!");

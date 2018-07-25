@@ -1,4 +1,5 @@
 import authenticatedUser from "../authenticated.js";
+import formEditModal from "../edit-employee/edit-employee-form.js";
 let tableUsers = users => {
   let body = "";
   let closeTags = `
@@ -17,7 +18,7 @@ let tableUsers = users => {
         </div>
         <div class="card-body">
           <div class="table-responsive">
-            <table class="table table-hover">
+            <table class="table table-hover" id="employee-table">
               <thead class="">
                 <th>Name</th>
                 <th>Email</th>
@@ -34,18 +35,13 @@ let tableUsers = users => {
       users[key].isadmin != true
     ) {
       body +=
-        "<tr" +
-        " " +
-        `id="${users[key].id}">` +
-        `
+        `       <tr>
                   <td>${users[key].full_name}</td>
                   <td>${users[key].email}</td>
                   <td>${users[key].role}</td>
                   <td>${users[key].address}</td>
                   <td>${users[key].dob}</td>
-                  <td>
-                  <button type="button" id="modalEdit" class="btn btn-warning">Edit</button>
-                  </td>
+                  <td><button type="button" id="editEmployee-${users[key].id}" data-id="${users[key].id}" class="btn btn-warning">Edit</button></td>
                 </tr>
     `;
     }
@@ -53,8 +49,8 @@ let tableUsers = users => {
   let constructedTable = table + body + closeTags;
 
   $("#dashboard-container")
-    .append(constructedTable)
-    .fadeIn();
+    .append(constructedTable);
+    formEditModal();
 };
 
 export default tableUsers;

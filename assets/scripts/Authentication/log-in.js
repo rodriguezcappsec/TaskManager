@@ -8,6 +8,7 @@ import getUsers from "../user/users-request.js";
 import userProfile from "../userProfile/userprofile.js";
 import addEmployee from "../add-employee/add-employee-form.js";
 import addTask from "../add-task/add-task-form.js";
+import editEmployeeForm from "../edit-employee/edit-employee-form.js";
 const isUserAdmin = () => {
   if (authenticatedUser.user.isadmin == null) {
     $("#all-tasks").hide();
@@ -22,18 +23,20 @@ const isUserAdmin = () => {
   }
 };
 
-const logInEvents = data => {
+const logInEvents = () => {
   $(".log-in").fadeOut();
   $(".wrapper").fadeIn("slow");
-  modalAlert(`Welcome ${data.user.full_name}`, "Log in Successful");
-  authenticatedUser.user = data.user;
+  modalAlert(
+    `Welcome ${authenticatedUser.user.full_name}`,
+    "Log in Successful"
+  );
   isUserAdmin();
   getUsers();
   getTasks();
   changePassModal();
   userProfile();
   addEmployee();
-  addTask()
+  addTask();
   logOut();
 };
 
@@ -52,8 +55,9 @@ let logIn = () => {
       }
     })
       .then(data => {
-        logInEvents(data);
-        console.log(data.user);
+        authenticatedUser.user = data.user;
+        logInEvents();
+        // console.log(data.user);
       })
       .catch(() => {
         modalAlert(

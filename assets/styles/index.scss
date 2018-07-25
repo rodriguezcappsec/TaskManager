@@ -1,17 +1,36 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons');
-@import url('https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css');
+@import url("https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons");
+@import url("https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css");
 
 // $icon-font-path:'~bootstrap-sass/assets/fonts/bootstrap/';
 // @import '~bootstrap-sass/assets/stylesheets/bootstrap';
 
-.log-in{
-    position: absolute; 
-    margin:auto;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    width: 600px;
-    padding: 150px 0 0 0;
-    
+.log-in {
+  position: absolute;
+  margin: auto;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 600px;
+  padding: 150px 0 0 0;
+}
+.modal-backdrop.in {
+  opacity: 0.5;
+  filter: alpha(opacity=50);
+}
+.card:hover {
+  cursor: pointer;
+}
+#modal-alert,
+#modal-change-password {
+  transform: translate(0, -50%);
+  top: 50%;
+  margin: 0 auto;
+}
+#modal-change-password {
+  height: 500px;
+}
+th,
+td {
+  text-transform: capitalize;
 }

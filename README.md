@@ -24,4 +24,4 @@
 
 ### Challenges creating the front-end
 
-Once the app scalated, maintaining a good data sructure was a little bit hard, this app is a full raw javascript one.
+Once the app scalated maintaining a good data sructure was a little bit hard. This app is a full raw javascript one. Later on I'll be using Reactjs or Angular for my front-end web apps.

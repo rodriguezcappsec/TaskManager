@@ -1,4 +1,4 @@
-# Task Manager Rails API
+# Task Manager Web App
 
 ### User Stories
 

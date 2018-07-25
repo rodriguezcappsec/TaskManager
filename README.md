@@ -10,7 +10,7 @@
 
 ### Admin Account
 
--admin@test.com / pass:admin
+-admin@test.com / pass:admin | -admin2@test.com/ pass:admin
 
 -All passwords for the employees in the Employees section is 123456
 

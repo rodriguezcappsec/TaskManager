@@ -5,11 +5,9 @@ let changePassword = () => {
   $("#form-changePassword").on("submit", event => {
     event.preventDefault();
     let serialization = $("#form-changePassword").serializeArray();
-    console.log(serialization[0].value);
-
     $.ajax({
-      url: apiUrl.apiUrl + "/change-password",
-      method: "PUT",
+      url: apiUrl.apiUrl + `/change-password`,
+      method: "PATCH",
       headers: {
         Authorization: "Token token=" + authenticatedUser.user.token
       },
@@ -20,7 +18,7 @@ let changePassword = () => {
         }
       }
     })
-      .then(data => {
+      .then(() => {
         $("#modal-change-password").modal("toggle");
         modalAlert(
           "Password Changed, you can know log in with your new password!",

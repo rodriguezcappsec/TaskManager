@@ -10,7 +10,7 @@
 
 ### Admin Account
 
--admin@test.com / pass:admin | -admin2@test.com/ pass:admin
+-Send me an email for the admin account, this system is meant to be internal for companies.
 
 -All passwords for the employees with the admin@test.com account in the Employees section is 123456
 

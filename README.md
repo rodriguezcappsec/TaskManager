@@ -2,7 +2,7 @@
 
 ### User Stories
 
--[User Stories](https://trello.com/b/gp8jv95c/tasks-today-peoples-task-manager)
+-[User Stories and more](https://trello.com/b/gp8jv95c/tasks-today-peoples-task-manager)
 
 ### Database Diagram 
 

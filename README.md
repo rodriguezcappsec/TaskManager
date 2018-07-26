@@ -12,7 +12,7 @@
 
 -admin@test.com / pass:admin | -admin2@test.com/ pass:admin
 
--All passwords for the employees in the Employees section is 123456
+-All passwords for the employees with the admin@test.com account in the Employees section is 123456
 
 -Once you add a new employee that employee automatically has an account and can log-in
 

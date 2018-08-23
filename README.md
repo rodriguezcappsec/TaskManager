@@ -20,9 +20,9 @@
 
 -[Login](https://i.imgur.com/G4DIhMW.png)
 
--[Dashboard](https://i.imgur.com/n9tDQCs.jpg)
+-[Dashboard](https://i.imgur.com/nzCmtUc.png)
 
 
 ### Challenges creating the front-end
 
-I developed this application using ReactJs, there was a learning curve that I had to tackle in order to develop some features of this application.Now I know better how Reactjs works.
+

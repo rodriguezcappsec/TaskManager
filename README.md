@@ -18,11 +18,11 @@
 
 ### Wireframes
 
--[Login](https://i.imgur.com/G4DIhMW.png)
+-[Login]()
 
--[Dashboard](https://i.imgur.com/nzCmtUc.png)
+-[Dashboard](https://i.imgur.com/n9tDQCs.jpg)
 
 
 ### Challenges creating the front-end
 
-Once the app scalated maintaining a good data sructure was a little bit hard. This app is a full raw javascript one. Later on I'll be using Reactjs or Angular for my front-end web apps.
+I developed this application using ReactJs, there was a learning curve that I had to tackle in order to develop some features of this application.Now I know better how Reactjs works.
